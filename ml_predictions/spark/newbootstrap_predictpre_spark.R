@@ -45,7 +45,7 @@ end_time - start_time
 
 ### selecting variables to be used in regressions
 ihwap_clean = filter(ihwap_full, treated == 0)
-ihwap_clean = dplyr::select(ihwap_full, -one_of(c("Household", "ExistingConsumption", "ProjectedConsumption", "treated", "end_day", "kfold", "kfold2", "rowid")))
+ihwap_clean = dplyr::select(ihwap_clean, -one_of(c("Household", "ExistingConsumption", "ProjectedConsumption", "treated", "end_day", "kfold", "kfold2", "rowid")))
 
 print("TRAINING ML MODEL:")
 start_time <- Sys.time()
