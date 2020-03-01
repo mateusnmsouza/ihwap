@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#PBS -V
+#### change the following line to specify the number of nodes and cores to use
+#PBS -l nodes=1:ppn=20
+#PBS -l walltime=20:00:00
+#PBS -q ncsa
+#PBS -M nogueir2@illinois.edu
+
+module load R/3.5.1
+
+### Change the default package library for R
+export R_LIBS=/projects/aces/nogueir2/NewRPackages
+
+Rscript /projects/aces/nogueir2/energy_predictpre_rf.R
+
+exit
